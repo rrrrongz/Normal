@@ -10,6 +10,12 @@
       <van-icon name="search" size="18" />
     </template>
   </van-nav-bar>
+  <slot name="content">
+    <div>
+      content
+    </div>
+
+  </slot>
 
   <van-tabbar v-model="active" @change="onChange">
     <van-tabbar-item icon="home-o" name="index">主页</van-tabbar-item>
