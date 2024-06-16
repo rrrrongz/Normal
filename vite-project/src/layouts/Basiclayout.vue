@@ -10,18 +10,15 @@
       <van-icon name="search" size="18" />
     </template>
   </van-nav-bar>
-  <slot name="content">
-    <div>
-      content
-    </div>
+<!--  路由组件-->
+    <router-view>
 
-  </slot>
-
-  <van-tabbar v-model="active" @change="onChange">
-    <van-tabbar-item icon="home-o" name="index">主页</van-tabbar-item>
-    <van-tabbar-item icon="search" name="team">队伍</van-tabbar-item>
-    <van-tabbar-item icon="friends-o" name="user">个人</van-tabbar-item>
-
+    </router-view>
+<!--  启用路由模式-->
+  <van-tabbar route @change="onChange">
+    <van-tabbar-item to="/" icon="home-o" name="index">主页</van-tabbar-item>
+    <van-tabbar-item to="/team" icon="search" name="team">队伍</van-tabbar-item>
+    <van-tabbar-item to="/user" icon="friends-o" name="team">个人</van-tabbar-item>
   </van-tabbar>
 
 </template>
@@ -33,7 +30,7 @@ import {ref} from "vue";
 const onClickLeft = () => history.back();
 const onClickRight = () => showToast('按钮');
 
-const active = ref(0);
+// const active = ref(0);
 const onChange = (index) => showToast(`标签 ${index}`);
 </script>
 

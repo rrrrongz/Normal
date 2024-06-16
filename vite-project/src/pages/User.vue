@@ -3,7 +3,8 @@
 </script>
 
 <template>
-
+<div>USER
+</div>
 </template>
 
 <style scoped>
