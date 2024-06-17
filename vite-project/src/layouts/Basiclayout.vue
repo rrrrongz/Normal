@@ -26,9 +26,14 @@
 <script setup lang="ts">
 import {showToast} from "vant";
 import {ref} from "vue";
+import {useRouter} from "vue-router";
 
+const router = useRouter()
 const onClickLeft = () => history.back();
-const onClickRight = () => showToast('按钮');
+const onClickRight = () => {
+  router.push('/search')
+
+};
 
 // const active = ref(0);
 const onChange = (index) => showToast(`标签 ${index}`);
